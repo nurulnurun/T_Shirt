@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\MasterController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\CategoryController;
 
 
 
@@ -17,4 +18,8 @@ Route::post('/brand/store', [BrandController::class, 'brand_store'])->name('bran
 route::get('/product/list', [ProductController::class, 'Product_List'])->name('Backend.Product-List');
 route::get('/create/new/products', [ProductController::class, 'Create_New_Products'])->name('Backend.Create_New_Products');
 route::post('/product/store', [ProductController::class, 'Product_Store'])->name('product.store');
+
+route::get('/category/list', [CategoryController::class, 'Category_List'])->name('Backend.Category-List');
+route::get('/create/new/categories', [CategoryController::class, 'Create_New_Categories'])->name('Backend.Create_New_Category');
+route::post('/category/store', [CategoryController::class, 'category_store'])->name('category.store');
 

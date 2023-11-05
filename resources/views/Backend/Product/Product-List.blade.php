@@ -7,12 +7,14 @@
     <a href=" {{ route('Backend.Create_New_Products') }} " class="btn btn-success btn-lg">Create New Products</a>
 </div>
 
+<div>
+
 <table class="table">
     <thead>
       <tr>
         <th scope="col">Product ID</th>
         <th scope="col">Product Name</th>
-        <th scope="col">Product Brand</th>
+        <th scope="col">Brand ID</th>
         <th scope="col">Product Image</th>
         <th scope="col">Product Price</th>
         <th scope="col">Product Stock</th>
@@ -22,20 +24,29 @@
     </thead>
     <tbody>
 
-        @foreach ($products as $key=>$product)
+    @foreach ($products as $item)
       <tr>
-        <th scope="row">{{$key+1}}</th>
-        <td>{{$product->product_id}}</td>
-        <td>{{$product->brand->product_name}}</td>
-        <td>{{$product->product_price}}</td>
-        <td>{{$product->description}}</td>
-        <td>image here</td>
-        <td>{{$product->product_status}}</td>
-        <td>{{$product->product_stock}}</td>
+        <th scope="row">{{ $item->product_id }}</th>
+        <td>{{ $item->product_name }}</td>
+        <td>{{ $item->brand_name }}</td>
+        <td>{{ $item->product_image }}</td>
+        <td>{{ $item->product_price }}</td>
+        <td>{{ $item->product_stock }}</td>
+        <td>{{ $item->product_status}}</td>
+        <td>
+            <a class = "btn btn-success btn-sm" href="">Edit</a>
+            <a class =  "btn btn-danger btn-sm" href="">Delete</a>
+            <a class =  "btn btn-primary btn-sm" href="">View</a>
+        </td>
       </tr>
-      @endforeach
+    @endforeach
     </tbody>
   </table>
+
+  {{ $products->links() }}
+
+</div>
+
 
 @endsection
 

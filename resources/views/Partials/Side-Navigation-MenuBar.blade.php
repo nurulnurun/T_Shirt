@@ -51,11 +51,11 @@
                             </svg>
                         </i>
                       <i class="sidenav-mini-icon"> B </i>
-                      <span class="item-name">Billing</span>
+                      <span class="item-name">Add New Category</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="../dashboard/special-pages/calender.html">
+                    <a class="nav-link " href="{{ route('Backend.Category-List') }}">
                         <i class="icon">
                             <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                 <g>
@@ -64,7 +64,7 @@
                             </svg>
                         </i>
                         <i class="sidenav-mini-icon"> C </i>
-                        <span class="item-name">Calender</span>
+                        <span class="item-name">All Categories Details</span>
                     </a>
                 </li>
                 <li class="nav-item">

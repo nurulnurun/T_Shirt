@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+
 use App\Models\Brand;
 use App\Models\Product;
 use App\Http\Controllers\Controller;
@@ -11,8 +12,8 @@ class ProductController extends Controller
 {
     public function Product_List()
     {
-        $products = Product::all();
-        return view("Backend.Product.Product-List", compact('products'));
+        $products = Product::paginate(2);
+        return view("Backend.Product.Product-List",compact('products'));
     }
 
     public function Create_New_Products()
@@ -26,13 +27,15 @@ class ProductController extends Controller
         //dd($ProductStore->all());
 
         Product::create([
+            'product_id'=>$ProductStore->product_id,
             'product_name'=>$ProductStore->product_name,
-            'brand_id'=>$ProductStore->brand_id,
+            'brand_name'=>$ProductStore->brand_id,
+            'product_image'=>$ProductStore->product_image,
             'product_price'=>$ProductStore->product_price,
             'product_stock'=>$ProductStore->product_stock,
             'product_status'=>$ProductStore->product_status
         ]);
 
-        return redirect()->route('Backend.Product-List');
+        return redirect(route('Backend.Product-List'));
     }
 }

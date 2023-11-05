@@ -10,6 +10,7 @@
 <table class="table">
     <thead>
       <tr>
+        <th scope="col">ID</th>
         <th scope="col">Brand ID</th>
         <th scope="col">Brand Name</th>
         <th scope="col">Brand Status</th>
@@ -23,6 +24,7 @@
         @foreach ($brands as $brand)
 
         <tr>
+            <th scope="row">{{$brand->id}}</th>
             <th scope="row">{{$brand->brand_id}}</th>
             <td> {{$brand->brand_name}} </td>
             <td> {{$brand->brand_status}} </td>

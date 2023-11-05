@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->integer('product_id');
             $table->string('product_name');
-            $table->double('product_price');
-            $table->text('description')->nullable();
+            $table->string('brand_name');
             $table->text('product_image')->nullable();
-            $table->string('product_status')->default('active');
-            $table->integer('product_stock')->default(10);
+            $table->integer('product_price');
+            $table->integer('product_stock');
+            $table->string('product_status');
             $table->timestamps();
         });
     }

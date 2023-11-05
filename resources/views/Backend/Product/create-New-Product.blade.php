@@ -10,19 +10,23 @@
 <form action=" {{ route('product.store') }} " method="post">
     @csrf
     <div class="mb-3">
+        <label for="productid" class="form-label">Product ID</label>
+        <input type="text" class="form-control" id="" name="product_id" placeholder="Enter a Product ID" required>
+      </div>
+      <div class="mb-3">
+        <label for="selectbrand" class="form-label">Select Brand</label>
+        <select name="brand_id" id="">
+            <option>Select Brand Name</option>
+            @foreach($brands as $brand)
+            <option value="{{$brand->brand_name}}">{{$brand->brand_name}}</option>
+            @endforeach
+        </select>
+      </div>
+    <div class="mb-3">
       <label for="productName" class="form-label">Product Name</label>
       <input type="text" class="form-control" id="" name="product_name" placeholder="Enter a Product Name" required>
     </div>
-    <div class="mb-3">
-        <label for="" class="">Select Brand:</label>
-        <select class="form-control" name="brand_id" id="">
 
-            @foreach ($brands as $brand)
-            <option value="{{$brand->brand_id}}">{{$brand->brand_name}}</option>
-            @endforeach
-
-        </select>
-    </div>
     <div class="mb-3">
         <label for="productImage" class="form-label">Product Image</label>
         <input type="file" class="form-control" id="" name="product_image" placeholder="Choose a any Product Image">
