@@ -30,6 +30,11 @@
       <!-- RTL Css -->
       <link rel="stylesheet" href="https://templates.iqonic.design/hope-ui/html/dist/assets/css/rtl.min.css">
       @notifyCss
+      <style>
+        .notify{
+            z-index:1000000;
+        }
+      </style>
 
   </head>
   <body class="  ">

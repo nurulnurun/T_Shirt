@@ -12,29 +12,29 @@
     <table class="table">
         <thead>
           <tr>
-            <th scope="col">Product ID</th>
+            <th scope="col">Category ID</th>
             <th scope="col">Category Name</th>
             <th scope="col">Category Description</th>
-            <th scope="col">Category Status</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
 
-
+     @foreach ($category as $item)
           <tr>
-            <th scope="row"></th>
-            <td></td>
-            <td></td>
+            <th scope="row">{{ $item->category_id }}</th>
+            <td>{{ $item->category_name	}}</td>
+            <td>{{ $item->category_description }}</td>
             <td>
                 <a class = "btn btn-success btn-sm" href="">Edit</a>
                 <a class =  "btn btn-danger btn-sm" href="">Delete</a>
                 <a class =  "btn btn-primary btn-sm" href="">View</a>
             </td>
           </tr>
-
+    @endforeach
         </tbody>
       </table>
-
+      {{ $category->links() }}
     </div>
 
 @endsection

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('product_id');
             $table->string('product_name');
             $table->string('brand_name');
+            $table->string('category_id');
             $table->text('product_image')->nullable();
             $table->integer('product_price');
             $table->integer('product_stock');

@@ -22,6 +22,15 @@
             @endforeach
         </select>
       </div>
+      <div class="mb-3">
+        <label for="selectbrand" class="form-label">Category ID</label>
+        <select name="category_id" id="">
+            <option>Select Category ID</option>
+            @foreach($category as $item)
+            <option value="{{ $item->category_id}}">{{$item->category_id}}</option>
+            @endforeach
+        </select>
+      </div>
     <div class="mb-3">
       <label for="productName" class="form-label">Product Name</label>
       <input type="text" class="form-control" id="" name="product_name" placeholder="Enter a Product Name" required>
