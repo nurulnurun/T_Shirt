@@ -161,8 +161,8 @@
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="../dashboard/app/user-profile.html">Profile</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="../dashboard/app/user-privacy-setting.html">Login</a></li>
-            <li><a class="dropdown-item" href="../dashboard/auth/sign-in.html">Logout</a></li>
+            <li><a class="dropdown-item" href="{{ route('admin.login') }}">Login</a></li>
+            <li><a class="dropdown-item" href="{{route('Admin_Logout')}}">Logout</a></li>
           </ul>
         </li>
       </ul>
